@@ -12,7 +12,7 @@ df = df.reset_index().rename(columns={'index': 'Sample ID'})
 
 # 页面配置
 st.set_page_config(
-    page_title="GP-LBSPE",
+    page_title="DEG-SPE",
     page_icon=":battery:",
     layout="wide",
     initial_sidebar_state="expanded"
