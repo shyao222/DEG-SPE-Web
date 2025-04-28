@@ -35,13 +35,13 @@ with st.sidebar:
             (float(df["conductivity"].min()), float(df["conductivity"].max()))
         ),
         "Tg": st.slider(
-            "Glass Transition Temperature (K)",
+            "Glass Transition Temperature (°C)",
             float(df["Tg"].min()),
             float(df["Tg"].max()),
             (float(df["Tg"].min()), float(df["Tg"].max()))
         ),
         "Td": st.slider(
-            "Thermal Decomposition Temperature (K)",
+            "Thermal Decomposition Temperature (°C)",
             float(df["Td"].min()),
             float(df["Td"].max()),
             (float(df["Td"].min()), float(df["Td"].max()))
@@ -179,8 +179,8 @@ with col_struct:
                 st.image(img, caption=f"Sample ID: {selected_sample_id}")
                 st.write(f"**Polymer SMILES:** {smiles}")
                 st.write(f"**Log Conductivity:** {selected_row['conductivity']:.4f} log S/cm")
-                st.write(f"**Glass Transition Temperature:** {selected_row['Tg']:.3f} K")
-                st.write(f"**Thermal Decomposition Temperature:** {selected_row['Td']:.3f} K")
+                st.write(f"**Glass Transition Temperature:** {selected_row['Tg']:.3f} °C")
+                st.write(f"**Thermal Decomposition Temperature:** {selected_row['Td']:.3f} °C")
                 st.write(f"**Lithium ion transference number:** {selected_row['t+ class']}")
             else:
                 st.warning("Invalid SMILES structure.")
@@ -190,8 +190,8 @@ with col_struct:
 # 性能指标全称映射
 performance_metrics_full = {
     "conductivity": "Log Conductivity (log S/cm)",
-    "Tg": "Glass Transition Temperature (K)",
-    "Td": "Thermal Decomposition Temperature (K)"
+    "Tg": "Glass Transition Temperature (°C)",
+    "Td": "Thermal Decomposition Temperature (°C)"
 }
 performance_metrics = list(performance_metrics_full.keys())
 
